@@ -1,0 +1,38 @@
+{
+  "ver": "2.3.7",
+  "uuid": "3810c428-2f5a-4567-b67c-2c06a4d14869",
+  "importer": "texture",
+  "type": "sprite",
+  "wrapMode": "clamp",
+  "filterMode": "bilinear",
+  "premultiplyAlpha": false,
+  "genMipmaps": false,
+  "packable": true,
+  "width": 500,
+  "height": 500,
+  "platformSettings": {},
+  "subMetas": {
+    "timesbrasileirosseriea_brasao-21": {
+      "ver": "1.0.6",
+      "uuid": "267617bb-1dfe-46c1-b213-dd75a41bafeb",
+      "importer": "sprite-frame",
+      "rawTextureUuid": "3810c428-2f5a-4567-b67c-2c06a4d14869",
+      "trimType": "auto",
+      "trimThreshold": 1,
+      "rotated": false,
+      "offsetX": 4,
+      "offsetY": -12.5,
+      "trimX": 70,
+      "trimY": 65,
+      "width": 368,
+      "height": 395,
+      "rawWidth": 500,
+      "rawHeight": 500,
+      "borderTop": 0,
+      "borderBottom": 0,
+      "borderLeft": 0,
+      "borderRight": 0,
+      "subMetas": {}
+    }
+  }
+}

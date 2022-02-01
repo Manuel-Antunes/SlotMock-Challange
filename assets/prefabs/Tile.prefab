@@ -95,7 +95,7 @@
     "_srcBlendFactor": 770,
     "_dstBlendFactor": 771,
     "_spriteFrame": {
-      "__uuid__": "b9e28534-5966-4d8e-b602-e16d61d8b663"
+      "__uuid__": "267617bb-1dfe-46c1-b213-dd75a41bafeb"
     },
     "_type": 0,
     "_sizeMode": 0,
@@ -121,94 +121,67 @@
     "_enabled": true,
     "textures": [
       {
-        "__uuid__": "28b1e3ee-1822-44ff-b749-b2bfa52f02f5"
+        "__uuid__": "1112d7cb-8eae-4b95-a3ec-17a1d75986a1"
       },
       {
-        "__uuid__": "55cf8e3a-dfae-4041-bd35-1306dca73547"
+        "__uuid__": "933a6254-7f76-4af5-9b69-22b8efbdd527"
       },
       {
-        "__uuid__": "48726a40-672e-4b15-b953-838ce322c218"
+        "__uuid__": "5c4eaa0c-83b2-49b6-bfcb-6197f0ceb38c"
       },
       {
-        "__uuid__": "6d494b1a-e6fe-4d13-86ff-4a3953146c6b"
+        "__uuid__": "957c568c-de66-453c-8846-e5a6173423bb"
       },
       {
-        "__uuid__": "34b051c7-76cc-4d13-876e-67b15741f94c"
+        "__uuid__": "922f8acc-f546-46ac-8235-e440be207f60"
       },
       {
-        "__uuid__": "e0ae39e1-c25f-4b58-af5a-143f385d47e3"
+        "__uuid__": "e7390402-0624-4d60-898b-2536b8817cd3"
       },
       {
-        "__uuid__": "63cfa158-f76f-4a47-b2e8-170537d7e43b"
+        "__uuid__": "3ddca2c3-36c7-4c7a-b6ce-b4042f72d371"
       },
       {
-        "__uuid__": "d688f49d-daab-47fa-8038-58742e6cf4ce"
+        "__uuid__": "acd83f1f-e015-4141-8720-76664e9c1397"
       },
       {
-        "__uuid__": "bb0d4765-6fdd-4eb3-a802-a26832e215ee"
+        "__uuid__": "d6d7433c-fda0-49db-a6ac-673bf6f22441"
       },
       {
-        "__uuid__": "371916fd-794e-4b6a-b904-db4e8d076ef8"
+        "__uuid__": "94737539-4938-4e75-92b4-b468f2f1006e"
       },
       {
-        "__uuid__": "0bcd940a-3ae0-40f7-9837-b5dec07be0bb"
+        "__uuid__": "94be886d-e94a-4616-b51c-2657b3525d38"
       },
       {
-        "__uuid__": "b9e28534-5966-4d8e-b602-e16d61d8b663"
+        "__uuid__": "058eb753-dae7-4ffa-8e6f-aa09407027c4"
       },
       {
-        "__uuid__": "0c0d5856-1dbb-4580-8a64-cf59e91c69ef"
+        "__uuid__": "535378f4-2402-47ba-b5c8-3edb78f8fa2b"
       },
       {
-        "__uuid__": "b60ff6d7-1798-4316-a566-9211fe643301"
+        "__uuid__": "7882c52d-d1bf-427c-87c1-1ea1ec1ef161"
       },
       {
-        "__uuid__": "60cb815c-d274-4c7f-b4ff-2f7bc4e096d8"
+        "__uuid__": "a5fa30c5-869c-46e6-944f-b8099a354b60"
       },
       {
-        "__uuid__": "f28392d8-3f62-4a58-9e9d-d07c8df5c4ae"
+        "__uuid__": "f959f9ac-4a06-4151-ada5-2bdae506d898"
       },
       {
-        "__uuid__": "8b0338f0-eb51-44b1-9e61-ea9df8ce6d16"
+        "__uuid__": "f9cfa1ca-ccbf-4dae-af04-3fd097cd0a3b"
       },
       {
-        "__uuid__": "c792dfa8-5643-4125-b096-c02fa0d3c997"
+        "__uuid__": "42c1a1bf-e759-452e-bf73-ec692be833f3"
       },
       {
-        "__uuid__": "9796ded2-6e47-4214-886d-78626f61f790"
+        "__uuid__": "9f2df4cf-57d0-4494-ab7a-86227a64c81e"
       },
       {
-        "__uuid__": "eb6185ff-8b0b-425c-be61-3f4c68117cda"
+        "__uuid__": "6580870c-6cf5-473a-8a07-7f9ab17331d2"
       },
       {
-        "__uuid__": "fe8273e0-29b0-4610-a57f-b7b81065530e"
-      },
-      {
-        "__uuid__": "d5ce4640-70fa-490f-a8b3-61c207a42cec"
-      },
-      {
-        "__uuid__": "4bcfb4d0-645c-4b67-a8ce-a16d44c6081f"
-      },
-      {
-        "__uuid__": "756e8ce5-aa82-410d-9e91-e81752026993"
-      },
-      {
-        "__uuid__": "feb3a015-4774-4a5e-9464-b9c601d24779"
-      },
-      {
-        "__uuid__": "66e59b67-a138-488f-aacc-32e178b14120"
-      },
-      {
-        "__uuid__": "fd3d6391-7f83-4172-9d3b-f7c08e608069"
-      },
-      {
-        "__uuid__": "3a646fc7-dfdf-4a9e-b940-582881319694"
-      },
-      {
-        "__uuid__": "1660ace2-a6ae-4315-aed5-d7a4bc2cd72f"
-      },
-      {
-        "__uuid__": "26a4af08-1209-403f-9a44-68fbde1047bd"
+        "__uuid__": "267617bb-1dfe-46c1-b213-dd75a41bafeb"
       }
     ],
     "GlowingContainer": {
@@ -236,7 +209,7 @@
       "__id__": 1
     },
     "asset": {
-      "__uuid__": "98293748-9197-44cb-b93f-ddc1ca7438ea"
+      "__id__": 0
     },
     "fileId": "",
     "sync": false

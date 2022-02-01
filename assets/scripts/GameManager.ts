@@ -1,12 +1,23 @@
+import Machine from "./slots/Machine";
+
 const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class GameManager extends cc.Component {
+
+  @property(cc.Integer)
+  random:number = 100;
+
   @property(cc.Node)
-  machine = null;
+  machine: cc.Node = null;
+
+  @property(cc.Integer)
+  initalValue = 0;
+
+  machineElement: Machine;
 
   @property(cc.EditBox)
-  editBox = null;
+  editBox:cc.EditBox = null;
 
   @property({ type: cc.AudioClip })
   audioClick = null;
@@ -17,6 +28,7 @@ export default class GameManager extends cc.Component {
 
   start(): void {
     this.machine.getComponent('Machine').createMachine();
+    this.machine.getComponent(Machine).coins = this.initalValue;
   }
   
 
@@ -24,19 +36,23 @@ export default class GameManager extends cc.Component {
     if (this.block && this.result != null) {
       this.informStop();
       this.result = null;
+      this.editBox.node.active = true;
     }
   }
 
   click(): void {
     cc.audioEngine.playEffect(this.audioClick, false);
-
-    if (this.machine.getComponent('Machine').spinning === false) {
-      this.block = false;
-      this.machine.getComponent('Machine').spin();
-      this.requestResult();
-    } else if (!this.block) {
-      this.block = true;
-      this.machine.getComponent('Machine').lock();
+    const givenGuessValue = parseInt(this.editBox.string,10);
+    if(!isNaN(givenGuessValue) && givenGuessValue <= this.machine.getComponent('Machine').coins){
+      this.editBox.node.active = false;
+      if (this.machine.getComponent('Machine').spinning === false) {
+        this.block = false;
+        this.machine.getComponent('Machine').spin(givenGuessValue);
+        this.requestResult();
+      } else if (!this.block) {
+        this.block = true;
+        this.machine.getComponent('Machine').lock();
+      }
     }
   }
 
@@ -61,10 +77,10 @@ export default class GameManager extends cc.Component {
 
   // the main function used to generate the final sequence following some pattern
   generatePattern(): Array<Array<number>> {
-    const percent = Math.random() * 100;
+    const percent =  this.random;
     // this function should generate a complete random array to ensure that the first pattern to be used
     const arr = this.generateFullDiferentArray();
-    if (percent < 50) {
+    if (percent <= 50) {
       return arr;
     }
     if (percent > 50 && percent <= 83) {
@@ -91,7 +107,7 @@ export default class GameManager extends cc.Component {
         }
       } while (test);
       where.push(alx);
-      const what = Math.ceil(Math.random() * 30) - 1;
+      const what = Math.ceil(Math.random() * 21) - 1;
       for (let j = 0; j < 5; j += 1) {
         result[j][where[i]] = what;
       }
@@ -107,7 +123,7 @@ export default class GameManager extends cc.Component {
       const result: Array<number> = [];
       do {
         for (let i = 0; i < 5; i += 1) {
-          result.push(Math.ceil(Math.random() * 30) - 1);
+          result.push(Math.ceil(Math.random() * 21) - 1);
         }
         for (let i = 0; i < 5; i += 1) {
           if (result[i] !== result[i + 1]) {

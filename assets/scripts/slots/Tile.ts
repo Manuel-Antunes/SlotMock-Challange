@@ -51,7 +51,7 @@ export default class Tile extends cc.Component {
   async loadTextures(): Promise<boolean> {
     const self = this;
     return new Promise<boolean>(resolve => {
-      cc.loader.loadResDir('gfx/Square', cc.SpriteFrame, function afterLoad(err, loadedTextures) {
+      cc.loader.loadResDir('gfx/Teams', cc.SpriteFrame, function afterLoad(err, loadedTextures) {
         self.textures = loadedTextures;
         resolve(true);
       });

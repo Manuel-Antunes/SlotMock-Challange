@@ -16,6 +16,8 @@ export default class Machine extends cc.Component {
   @property(cc.Prefab)
   public _reelPrefab = null;
 
+  private bet?: number;
+
   public _coins = 1000;
 
   get coins(): number {
@@ -82,7 +84,8 @@ export default class Machine extends cc.Component {
     this.node.getComponent(cc.Widget).updateAlignment();
   }
 
-  spin(): void {
+  spin(bet:number): void {
+    this.bet = bet;
     this.popUpLabel.active = false;
     this.spinning = true;
     this.button.getChildByName('Label').getComponent(cc.Label).string = 'STOP';
@@ -161,7 +164,10 @@ export default class Machine extends cc.Component {
         points += 1;
       }
     }
-    this.coins += points;
+    this.coins += (points * this.coins)/100;
+    if(points === 0){
+      this.coins -= this.bet;
+    }
     this.handleMessagePopUp(points);
   }
 
