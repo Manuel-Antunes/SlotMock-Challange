@@ -62,7 +62,7 @@ export default class Reel extends cc.Component {
     // resets the current node in the reel
     const dirModifier = this.spinDirection === Aux.Direction.Down ? -1 : 1;
     if (el.position.y * dirModifier > 288) {
-      el.position = cc.v2(0, -288 * dirModifier);
+      el.position = cc.v3(0, -288 * dirModifier,0);
       let pop = null;
       if (this.result != null && this.result.length > 0) {
         pop = this.result.pop();
@@ -117,7 +117,7 @@ export default class Reel extends cc.Component {
   doStop(element: cc.Node = null): void {
     const dirModifier = this.spinDirection === Aux.Direction.Down ? -1 : 1;
 
-    const move = cc.tween(element).by(0.04, { position: cc.v2(0, 144 * dirModifier) });
+    const move = cc.tween(element).by(0.04, { position: cc.v3(0, 144 * dirModifier, 3) });
     const doChange = cc.tween().call(() => this.changeCallback(element));
     const end = cc.tween().by(0.2, { position: cc.v2(0, 144 * dirModifier) }, { easing: 'bounceOut' });
     move

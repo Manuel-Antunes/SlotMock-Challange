@@ -5,6 +5,9 @@ export default class GameManager extends cc.Component {
   @property(cc.Node)
   machine = null;
 
+  @property(cc.EditBox)
+  editBox = null;
+
   @property({ type: cc.AudioClip })
   audioClick = null;
 
@@ -15,6 +18,7 @@ export default class GameManager extends cc.Component {
   start(): void {
     this.machine.getComponent('Machine').createMachine();
   }
+  
 
   update(): void {
     if (this.block && this.result != null) {

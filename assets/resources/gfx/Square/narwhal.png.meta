@@ -1,6 +1,7 @@
 {
-  "ver": "2.3.5",
+  "ver": "2.3.7",
   "uuid": "0fc88a55-776b-46e5-8e5c-f75494bb2ee8",
+  "importer": "texture",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
@@ -12,8 +13,9 @@
   "platformSettings": {},
   "subMetas": {
     "narwhal": {
-      "ver": "1.0.4",
+      "ver": "1.0.6",
       "uuid": "c792dfa8-5643-4125-b096-c02fa0d3c997",
+      "importer": "sprite-frame",
       "rawTextureUuid": "0fc88a55-776b-46e5-8e5c-f75494bb2ee8",
       "trimType": "auto",
       "trimThreshold": 1,

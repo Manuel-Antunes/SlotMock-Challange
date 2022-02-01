@@ -16,7 +16,7 @@ export default class Machine extends cc.Component {
   @property(cc.Prefab)
   public _reelPrefab = null;
 
-  public _coins = 0;
+  public _coins = 1000;
 
   get coins(): number {
     return this._coins;
@@ -66,7 +66,7 @@ export default class Machine extends cc.Component {
   createMachine(): void {
     this.node.destroyAllChildren();
     this.reels = [];
-    this.coins = 0;
+    this.coins = 1000;
     this.popUpLabel.active = false;
     let newReel: cc.Node;
     for (let i = 0; i < this.numberOfReels; i += 1) {
