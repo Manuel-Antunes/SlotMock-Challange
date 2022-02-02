@@ -90,13 +90,13 @@
     "_active": true,
     "_components": [
       {
-        "__id__": 239
-      },
-      {
         "__id__": 240
       },
       {
         "__id__": 241
+      },
+      {
+        "__id__": 242
       }
     ],
     "_prefab": null,
@@ -355,6 +355,9 @@
     "_components": [
       {
         "__id__": 198
+      },
+      {
+        "__id__": 239
       }
     ],
     "_prefab": null,
@@ -9643,6 +9646,25 @@
     },
     "fileId": "",
     "sync": false
+  },
+  {
+    "__type__": "cc.AudioSource",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 7
+    },
+    "_enabled": true,
+    "_clip": {
+      "__uuid__": "3a7b7f10-942c-44f2-ba24-2f46e36213f8"
+    },
+    "_volume": 1,
+    "_mute": false,
+    "_loop": true,
+    "_firstlyEnabled": true,
+    "playOnLoad": false,
+    "preload": false,
+    "_id": "20HSvG0DpJtKBy6knJvB2D"
   },
   {
     "__type__": "cc.Canvas",

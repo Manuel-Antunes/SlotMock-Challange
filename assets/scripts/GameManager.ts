@@ -34,6 +34,7 @@ export default class GameManager extends cc.Component {
   update(): void {
     if (this.block && this.result != null) {
       this.informStop();
+      this.node.getComponent(cc.AudioSource).stop();
       this.result = null;
     }
   }
@@ -51,6 +52,7 @@ export default class GameManager extends cc.Component {
       percent <= 100
     ) {
       this.guessInput.node.active = false;
+      this.node.getComponent(cc.AudioSource).play();
       this.randomValueBox.node.active = false;
       if (this.machine.getComponent('Machine').spinning === false) {
         this.block = false;
