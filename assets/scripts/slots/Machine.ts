@@ -1,3 +1,4 @@
+import GameManager from '../GameManager';
 import Aux from '../SlotEnum';
 
 const { ccclass, property } = cc._decorator;
@@ -121,6 +122,7 @@ export default class Machine extends cc.Component {
       this.getThePatternFromScreen();
       this.button.getChildByName('Label').getComponent(cc.Label).string =
         'SPIN';
+      this.node.parent.parent.getComponent(GameManager).onSpinEnd();
     }, 2500);
     const rngMod = Math.random() / 2;
     for (let i = 0; i < this.numberOfReels; i += 1) {

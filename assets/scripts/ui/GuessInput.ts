@@ -16,12 +16,10 @@ export default class GuessInput extends cc.Component {
   }
 
   set maxValue(value: number) {
-    if (value > 0) {
-      if (this.value > value) {
-        this.value = value;
-      }
+    if (this.value > value) {
       this.value = value;
     }
+    this._maxValue = value;
   }
 
   @property(cc.Integer)
@@ -41,7 +39,7 @@ export default class GuessInput extends cc.Component {
 
   @property(cc.Integer)
   public set value(value: number): void {
-    this.valueLabel.getComponent(cc.Label).string = `${value}`;
+    this.valueLabel.getComponent(cc.Label).string = `${Math.floor(value)}`;
     this._value = value;
   }
 }

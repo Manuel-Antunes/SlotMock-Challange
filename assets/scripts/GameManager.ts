@@ -35,9 +35,6 @@ export default class GameManager extends cc.Component {
     if (this.block && this.result != null) {
       this.informStop();
       this.result = null;
-      this.guessInput.node.active = true;
-      this.randomValueBox.node.active = true;
-      this.guessInput = this.machine.getComponent('Machine').coins;
     }
   }
 
@@ -150,5 +147,11 @@ export default class GameManager extends cc.Component {
       }
     }
     return arr;
+  }
+
+  onSpinEnd() {
+    this.guessInput.node.active = true;
+    this.randomValueBox.node.active = true;
+    this.guessInput.maxValue = this.machine.getComponent('Machine').coins;
   }
 }
