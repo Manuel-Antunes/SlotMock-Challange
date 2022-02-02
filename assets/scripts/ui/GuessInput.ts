@@ -28,7 +28,9 @@ export default class GuessInput extends cc.Component {
   }
 
   public increase(): void {
-    this.value += 10;
+    if (!(this.value + 10 > this._maxValue)) {
+      this.value += 10;
+    }
   }
 
   public decrease(): void {
