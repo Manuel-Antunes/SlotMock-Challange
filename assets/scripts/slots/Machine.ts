@@ -25,7 +25,13 @@ export default class Machine extends cc.Component {
   }
 
   set coins(coins: number) {
-    this.coinsLabel.getComponent(cc.Label).string = `x ${coins}`;
+    this.coinsLabel.getComponent(cc.Label).string = `x ${coins
+      .toLocaleString('pt', {
+        minimumFractionDigits: 2,
+        style: 'currency',
+        currency: 'BRL',
+      })
+      .replace('R$ ', '')}`;
     this._coins = coins;
   }
 
@@ -84,7 +90,7 @@ export default class Machine extends cc.Component {
     this.node.getComponent(cc.Widget).updateAlignment();
   }
 
-  spin(bet:number): void {
+  spin(bet: number): void {
     this.bet = bet;
     this.popUpLabel.active = false;
     this.spinning = true;
@@ -113,7 +119,8 @@ export default class Machine extends cc.Component {
       this.button.getComponent(cc.Button).interactable = true;
       this.checking = true;
       this.getThePatternFromScreen();
-      this.button.getChildByName('Label').getComponent(cc.Label).string = 'SPIN';
+      this.button.getChildByName('Label').getComponent(cc.Label).string =
+        'SPIN';
     }, 2500);
     const rngMod = Math.random() / 2;
     for (let i = 0; i < this.numberOfReels; i += 1) {
@@ -156,7 +163,8 @@ export default class Machine extends cc.Component {
         for (let k = i - 1; k >= 0; k -= 1) {
           if (
             this.checkWinningRow(arr, k) &&
-            arr[0][k].getComponent('Tile').index === arr[0][i].getComponent('Tile').index
+            arr[0][k].getComponent('Tile').index ===
+              arr[0][i].getComponent('Tile').index
           ) {
             points += 3;
           }
@@ -164,8 +172,8 @@ export default class Machine extends cc.Component {
         points += 1;
       }
     }
-    this.coins += (points * this.coins)/100;
-    if(points === 0){
+    this.coins += (points * this.coins) / 100;
+    if (points === 0) {
       this.coins -= this.bet;
     }
     this.handleMessagePopUp(points);
@@ -196,7 +204,10 @@ export default class Machine extends cc.Component {
   checkWinningRow(arr: Array<Array<cc.Node>>, row: number): boolean {
     let test = true;
     for (let j = 0; j < arr.length - 1; j += 1) {
-      if (arr[j][row].getComponent('Tile').index !== arr[j + 1][row].getComponent('Tile').index) {
+      if (
+        arr[j][row].getComponent('Tile').index !==
+        arr[j + 1][row].getComponent('Tile').index
+      ) {
         test = false;
         break;
       }

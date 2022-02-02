@@ -1,12 +1,12 @@
-import Machine from "./slots/Machine";
+import Machine from './slots/Machine';
+import GuessInput from './ui/GuessInput';
 
 const { ccclass, property } = cc._decorator;
 
 @ccclass
 export default class GameManager extends cc.Component {
-
-  @property(cc.Integer)
-  random:number = 100;
+  @property(cc.EditBox)
+  randomValueBox: cc.EditBox = null;
 
   @property(cc.Node)
   machine: cc.Node = null;
@@ -16,8 +16,8 @@ export default class GameManager extends cc.Component {
 
   machineElement: Machine;
 
-  @property(cc.EditBox)
-  editBox:cc.EditBox = null;
+  @property(GuessInput)
+  guessInput: GuessInput = null;
 
   @property({ type: cc.AudioClip })
   audioClick = null;
@@ -30,24 +30,33 @@ export default class GameManager extends cc.Component {
     this.machine.getComponent('Machine').createMachine();
     this.machine.getComponent(Machine).coins = this.initalValue;
   }
-  
 
   update(): void {
     if (this.block && this.result != null) {
       this.informStop();
       this.result = null;
-      this.editBox.node.active = true;
+      this.guessInput.node.active = true;
+      this.randomValueBox.node.active = true;
     }
   }
 
   click(): void {
     cc.audioEngine.playEffect(this.audioClick, false);
-    const givenGuessValue = parseInt(this.editBox.string,10);
-    if(!isNaN(givenGuessValue) && givenGuessValue <= this.machine.getComponent('Machine').coins){
-      this.editBox.node.active = false;
+    const percent = parseInt(this.randomValueBox.string, 10);
+    if (
+      this.guessInput.value &&
+      this.guessInput.value > 0 &&
+      this.guessInput.value <= this.machine.getComponent('Machine').coins &&
+      // eslint-disable-next-line no-restricted-globals
+      !isNaN(percent) &&
+      percent >= 0 &&
+      percent <= 100
+    ) {
+      this.guessInput.node.active = false;
+      this.randomValueBox.node.active = false;
       if (this.machine.getComponent('Machine').spinning === false) {
         this.block = false;
-        this.machine.getComponent('Machine').spin(givenGuessValue);
+        this.machine.getComponent('Machine').spin(this.guessInput.value);
         this.requestResult();
       } else if (!this.block) {
         this.block = true;
@@ -77,7 +86,7 @@ export default class GameManager extends cc.Component {
 
   // the main function used to generate the final sequence following some pattern
   generatePattern(): Array<Array<number>> {
-    const percent =  this.random;
+    const percent = parseInt(this.randomValueBox.string, 10);
     // this function should generate a complete random array to ensure that the first pattern to be used
     const arr = this.generateFullDiferentArray();
     if (percent <= 50) {
@@ -93,7 +102,10 @@ export default class GameManager extends cc.Component {
   }
 
   // an auxiliary function to order the array into the given pattern
-  generatePatternedArray(qtd: number, arr: Array<Array<number>>): Array<Array<number>> {
+  generatePatternedArray(
+    qtd: number,
+    arr: Array<Array<number>>
+  ): Array<Array<number>> {
     const result = arr;
     const where = [];
     for (let i = 0; i < qtd; i += 1) {

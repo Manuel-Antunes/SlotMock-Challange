@@ -12,10 +12,7 @@
     "prettier",
     "plugin:@typescript-eslint/recommended"
   ],
-  "plugins": [
-    "prettier",
-    "@typescript-eslint"
-  ],
+  "plugins": ["prettier", "@typescript-eslint/eslint-plugin", "filenames"],
   "globals": {
     "cc": "readonly"
   },
@@ -29,14 +26,19 @@
     "no-alert": "warn",
     "no-console": "warn",
     "no-underscore-dangle": "off",
+    "import/prefer-default-export": "off",
     "class-methods-use-this": "off",
     "@typescript-eslint/no-this-alias": "off",
+    "filenames/match-exported": 2,
+    "filenames/no-index": 2,
     "@typescript-eslint/array-type": [
       "error",
       {
         "default": "generic"
       }
     ],
+    "@typescript-eslint/explicit-member-accessibility": ["error"],
+    "@typescript-eslint/explicit-module-boundary-types": ["error"],
     "prettier/prettier": [
       "error",
       {
@@ -44,6 +46,20 @@
         "singleQuote": true,
         "printWidth": 120
       }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never"
+      }
     ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".ts"]
+      }
+    }
   }
 }
