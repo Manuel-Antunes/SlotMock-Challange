@@ -28,16 +28,18 @@
   "group-list": [
     "default"
   ],
-  "last-module-event-record-time": 1571418771174,
+  "last-module-event-record-time": 1643762137684,
   "simulator-orientation": false,
   "simulator-resolution": {
-    "height": 640,
-    "width": 960
+    "width": 960,
+    "height": 640
   },
-  "start-scene": "current",
+  "start-scene": "c1bc28a2-729f-47d8-81bc-cbf91d2e4944",
   "use-customize-simulator": true,
   "use-project-simulator-setting": false,
   "migrate-history": [
     "cloud-function"
-  ]
+  ],
+  "preview-port": 7456,
+  "clear-simulator-cache": true
 }

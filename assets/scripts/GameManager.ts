@@ -37,6 +37,7 @@ export default class GameManager extends cc.Component {
       this.result = null;
       this.guessInput.node.active = true;
       this.randomValueBox.node.active = true;
+      this.guessInput = this.machine.getComponent('Machine').coins;
     }
   }
 
@@ -104,7 +105,7 @@ export default class GameManager extends cc.Component {
   // an auxiliary function to order the array into the given pattern
   generatePatternedArray(
     qtd: number,
-    arr: Array<Array<number>>
+    arr: Array<Array<number>>,
   ): Array<Array<number>> {
     const result = arr;
     const where = [];
